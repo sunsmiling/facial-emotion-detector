@@ -4,6 +4,10 @@ facial-emotion-detector
 이 페이지는 얼굴 표정 인식에 관한 논문[]의 일환으로, 구현한 결과물에 대한 설명을 포함하고 있습니다.
 
 
+Contributors
+--------
+* [이소현]https://github.com/sohyunne
+
 Train / Test 에 사용한 Dataset
 --------
 본 연구에서는 웹사이트 Kaggle에서 제공한 데이터를 사용하여 [얼굴인식]과 [표정분류]로 구분된 두 단계를 거치는 얼굴표정 자동 인식 시스템을 구축하였습니다.
