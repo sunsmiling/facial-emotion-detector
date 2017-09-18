@@ -3,13 +3,10 @@
 
 # In[1]:
 
-
 import glob,random,math,dlib,cv2,itertools,sys,os,pickle,warnings,argparse
 
 
 # In[2]:
-
-
 
 import numpy as np
 from numpy import genfromtxt
@@ -181,29 +178,26 @@ def get_landmarks_integ(image,classifier):
 
 
 def imageimport(image,font_size,font_width,rec_size,classifier):
+    col_img = cv2.imread(image)
     frame = cv2.imread(image, cv2.IMREAD_GRAYSCALE)
     detections = detector(frame,1) 
     if len(detections) > 0: 
         print("Number of faces detected: {}".format(len(detections)))
+        print("Facial expression: {}".format(get_landmarks_integ(image,classifier)[1]))
         for (i,rect) in enumerate(detections):
             progress(i+1,len(detections),suffix='Emotion detecting')
             (x, y, w, h) = face_utils.rect_to_bb(rect)
-            cv2.rectangle(frame, (x, y), (x + w, y + h), (0,255,0),rec_size)
+            cv2.rectangle(col_img, (x, y), (x + w, y + h), (0,255,0),rec_size)
             #show emotion
             emotion_list = get_landmarks_integ(image,classifier)[1]
-            cv2.putText(frame, emotion_list[i], (x,y), cv2.FONT_HERSHEY_COMPLEX_SMALL, font_size,(255,255,255), font_width)
+            cv2.putText(col_img, emotion_list[i], (x,y+(font_width*5)), cv2.FONT_HERSHEY_SIMPLEX, font_size,(0,15,7), font_width)
         cv2.namedWindow("Detected", cv2.WINDOW_NORMAL)
-        cv2.imshow("Detected",frame)
+        cv2.imshow("Detected",col_img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
         print()
     else:
         print("detection fail")
-
-
-# In[27]:
-
-#imageimport("sunny1.jpg",4,4,4,"svm_new.pkl")
 
 
 # In[ ]:
