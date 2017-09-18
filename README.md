@@ -57,11 +57,16 @@ python facial_expression.py -c svm_new.pkl -i sunny1.jpg -f 4 -w 4 -r 4
 ![Teaser](http://cfile2.uf.tistory.com/image/9906063359BF441C22AB7C)
 
 <pre>
-python facial_expression.py -c svm_new.pkl -i sunny1.jpg -f 4 -w 4 -r 4
+python facial_expression.py -c svm.pkl -i example_img/1.jpeg -f 0.3 -w 1 -r 1
+python facial_expression.py -c svm.pkl -i example_img/2.jpeg -f 0.3 -w 1 -r 1
+python facial_expression.py -c svm.pkl -i example_img/3.jpeg -f 0.3 -w 1 -r 1
+python facial_expression.py -c svm.pkl -i example_img/4.jpeg -f 0.3 -w 1 -r 1
 </pre>
 
-![Teaser](http://cfile2.uf.tistory.com/image/9906063359BF441C22AB7C)
-
+![Teaser](http://cfile26.uf.tistory.com/image/99EEA03359BF5BDC0A4F96)
+![Teaser](http://cfile7.uf.tistory.com/image/9938423359BF5BDC01E8F3)
+![Teaser](http://cfile9.uf.tistory.com/image/9946A73359BF5BDC31FFA1)
+![Teaser](http://cfile9.uf.tistory.com/image/9927AB3359BF5BDC3731D0)
 
 Contributors
 --------
